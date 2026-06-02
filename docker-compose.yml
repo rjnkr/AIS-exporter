@@ -1,0 +1,12 @@
+services:
+  ais-exporter:
+    build:
+      context: .
+      platforms:
+        - linux/amd64
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./config.json:/app/config.json:ro
+      - ./data:/app/data

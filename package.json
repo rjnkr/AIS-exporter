@@ -1,0 +1,14 @@
+{
+  "name": "ais-exporter",
+  "version": "1.0.0",
+  "description": "AIS NMEA data collector with web frontend",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "express": "^4.19.2",
+    "node-cron": "^3.0.3"
+  }
+}

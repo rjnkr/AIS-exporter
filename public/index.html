@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIS Exporter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>AIS Exporter</h1>
+      <div id="statusBadge" class="status-badge disconnected">
+        <span class="status-dot"></span>
+        <span id="statusText">Disconnected</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Filter panel -->
+    <section class="panel filter-panel">
+      <h2>Filter by Period</h2>
+      <div class="filter-row">
+        <div class="field">
+          <label for="startTime">Start</label>
+          <input type="datetime-local" id="startTime">
+        </div>
+        <div class="field">
+          <label for="endTime">End</label>
+          <input type="datetime-local" id="endTime">
+        </div>
+        <div class="filter-actions">
+          <button id="applyFilter" class="btn btn-primary">Apply Filter</button>
+          <button id="clearFilter" class="btn btn-secondary">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- File list panel -->
+    <section class="panel file-panel">
+      <div class="file-panel-header">
+        <h2>Recorded Files <span id="fileCount" class="count-badge">0</span></h2>
+        <div class="bulk-actions">
+          <button id="selectAll" class="btn btn-secondary btn-sm">Select All</button>
+          <button id="deselectAll" class="btn btn-secondary btn-sm">Deselect All</button>
+          <button id="downloadBtn" class="btn btn-primary" disabled>Download Selected</button>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="fileTable">
+          <thead>
+            <tr>
+              <th class="col-check">
+                <input type="checkbox" id="headerCheckbox" title="Toggle all">
+              </th>
+              <th class="col-name">Filename</th>
+              <th class="col-type">Type</th>
+              <th class="col-size">Size</th>
+              <th class="col-ts">Period start</th>
+              <th class="col-status">Status</th>
+            </tr>
+          </thead>
+          <tbody id="fileTableBody">
+          </tbody>
+        </table>
+        <div id="emptyState" class="empty-state hidden">No files found for the selected period.</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

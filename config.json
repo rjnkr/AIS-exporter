@@ -1,0 +1,16 @@
+{
+  "tcp": {
+    "host": "localhost",
+    "port": 8550,
+    "username": "your_username",
+    "password": "yoiur_password",
+    "loginType": "plain"
+  },
+  "storage": {
+    "rawDir": "./data/raw",
+    "compressedDir": "./data/compressed"
+  },
+  "web": {
+    "port": 3000
+  }
+}

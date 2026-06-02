@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Data files (recorded AIS data)
+data/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+
+# Docker exported images
+*.tar.gz
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# JetBrains IDEs
+.idea/
+
+# VS Code
+.vscode/
+
+# Claude Code
+.claude/
+
+# Documentation / specs
+*.pdf
